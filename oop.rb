@@ -76,8 +76,8 @@ class Dragon
 end
 
 dragon1 = Dragon.new("Vhagar", "Breanna", "Black and red")
-dragon1.new_meal(3)
-p dragon1
+dragon1.change_meal(4)
+p dragon1.eat
 
 
 
