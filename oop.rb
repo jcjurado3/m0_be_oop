@@ -33,12 +33,18 @@ class Vampire
     def change_pet(new_pet)
         @pet = new_pet
     end
+    def drink
+        if @fed == true
+          @thirsty = false
+        end
+    end
 
 end
 
 vamp1 = Vampire.new("jimmy","dog")
 vamp1.change_pet("dog")
 p vamp1
+p vamp1.drink
 
 #  Write a Dragon class
 #  it should have a dynamic name attribute (string)
@@ -48,15 +54,32 @@ p vamp1
 #  it should have a eat method. If the dragon eats 4 times, it is no longer hungry
 
 class Dragon
-    def initialize(name, rider, color, eat)
+    def initialize(name, rider, color)
         @name = name
         @rider = rider
         @color = color
         @is_hungry = true
-        @full = 4
-        @eat = eat
+        @meal = 0
     end
-    if 
+    def change_meal(new_meal)
+        @meal = new_meal
+    end
+    def eat
+        if @meal >= 4
+        @is_hungry = false
+        puts "#{@name} is full"
+        elsif @meal < 4
+            @is_hungry = true
+            puts "#{@name} is still hungry"
+        end 
+    end
+end
+
+dragon1 = Dragon.new("Vhagar", "Breanna", "Black and red")
+dragon1.new_meal(3)
+p dragon1
+
+
 
 
 
